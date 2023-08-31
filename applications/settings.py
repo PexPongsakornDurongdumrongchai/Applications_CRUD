@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-_jp+i(q1%hu^84h%ft$(27t*2%m+)@w+b_q0wan69kb3m!=+y0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['PexPongsakorn.pythonanywhere.com']
 
 # Application definition
 
@@ -111,7 +111,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -125,13 +124,10 @@ LOGIN_REDIRECT_URL = 'home'
 
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static")
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+STATIC_URL = '/static/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
-STATIC_ROOT = '/home/applications/PexPongsakorn.pythonanywhere.com/static'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+MEDIA_URL='/media/'
