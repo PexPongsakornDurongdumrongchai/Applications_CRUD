@@ -1,8 +1,90 @@
-<h1>Software Details</h1>
-<h2>Company Name: {{members.companyname}}</h2>
-Full Name: {{ members.fullname }}
-Job Title: {{members.jobtitle}}
-Email: {{ members.emailaddress }}
-Software Username: {{members.softwareusername}}
-Expiration Date: {{ members.expirationdate }}
-Version: {{members.version}}
+{% extends 'layout/app.html' %}
+
+{% load static %}
+{% block stylesheet %}
+    <style>
+        .bd-example {
+            padding: 1.5rem;
+            margin-right: 0;
+            margin-left: 0;
+            border-width: 1px;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+        .bd-example {
+            position: relative;
+            padding: 1rem;
+            margin: 1rem -.75rem 0;
+            border: solid #dee2e6;
+            border-width: 1px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">CRUD</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Edit CRUD</li>
+        </ol>
+        <div class="bd-example">
+            <form action="update/{{ members.id }}" method="POST">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating mb-3 mb-md-0">
+                            <h2>Company name</h2>
+                            <h4 style="color: blue;">{{members.companyname}}</h4>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <h2>Full name</h2>
+                            <h4 style="color: blue;">{{members.fullname}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating mb-3 mb-md-0">
+                            <h2>Job title</h2>
+                            <h4 style="color: blue;">{{members.jobtitle}}</h4>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <h2>Email address</h2>
+                            <h4 style="color: blue;">{{members.emailaddress}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating mb-3 mb-md-0">
+                            <h2>Software user name</h2>
+                            <h4 style="color: blue;">{{members.softwareusername}}</h4>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3 mb-md-0">
+                            <h2>Expiration date</h2>
+                            <h4 style="color: blue;">{{members.expirationdate}}</h4>
+                        </div>
+                    </div>
+ 
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            <h2>Version</h2>
+                            <h4 style="color: blue;">{{members.version}}</h4>
+                        </div>
+                    </div>
+                </div>
+  <div class="mt-4 mb-0">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+{% endblock %}
